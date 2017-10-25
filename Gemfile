@@ -52,3 +52,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "jbuilder", "~> 2.5"
+gem "mysql2", "~> 0.4.4"
+gem "bcrypt"
+
+gem "mysql2", "~> 0.4.4"
+gem "bcrypt"
+gem "sprockets-rails", :require => "sprockets/railtie"
+gem "bootstrap-sass", "~> 3.3.6"

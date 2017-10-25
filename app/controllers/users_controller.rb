@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 
+  skip_before_action :require_login, only: [:new, :create]
+  
   def index
+  	 @user = User.all
   end
 
   def new
@@ -13,7 +16,7 @@ class UsersController < ApplicationController
       flash[:success] = "Register success"
       redirect_to users_path
     else
-      flash[:success] = "Register failed"
+      flash[:failed] = "Register failed"
       render :new
     end
   end

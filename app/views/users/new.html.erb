@@ -1,11 +1,15 @@
-<h1>Register</h1>
 
-<div class="row">
+
+<div class="container">
+<!-- Form Name -->
+
+<legend><center><h2><b>Sign Up</b></h2></center></legend><br>
+
  <%= form_for @user, html: {class: "form-horizontal"} do |f| %>
 
       <!--name-->
       <div class="form-group">
-        <%= f.label :name, "Name", class: "col-md-2 control-label" %>
+        <%= f.label :name, "Name", class: "col-md-4 control-label" %>
         <div class="col-md-6">
           <%= f.text_field :name, class: "form-control", placeholder: "Enter user name" %>
         </div>
@@ -13,7 +17,7 @@
 
       <!--email-->
       <div class="form-group">
-        <%= f.label :email, "Email", class: "col-md-2 control-label" %>
+        <%= f.label :email, "Email", class: "col-md-4 control-label" %>
         <div class="col-md-6">
           <%= f.text_field :email, class: "form-control", placeholder: "Enter email" %>
         </div>
@@ -21,14 +25,14 @@
        
       <!--password-->  
       <div class="form-group">
-        <%= f.label :password, "Password", class: "col-md-2 control-label" %>
+        <%= f.label :password, "Password", class: "col-md-4 control-label" %>
         <div class="col-md-6">
           <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
         </div>
       </div>
 
       <div class="form-group">
-        <%= f.label :password_confirmation, "Password Confirmation", class: "col-md-2 control-label" %>
+        <%= f.label :password_confirmation, "Password Confirmation", class: "col-md-4 control-label" %>
         <div class="col-md-6">
           <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Enter password confirmation" %>
         </div>
@@ -36,7 +40,8 @@
       
       <div class="form-group">
         <div class="col-lg-offset-4">
-          <%= f.submit "Register", class: "btn btn-success" %>
+          <div class="col-md-4">
+          <%= f.submit "Register", class: "btn btn-warning" %>
         </div>
       </div>
     <% end %>

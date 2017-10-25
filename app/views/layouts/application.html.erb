@@ -26,18 +26,24 @@
 
   <body>
 
-  	<div class="container">
-  		<nav class="navbar navbar-default" id="topNavBar">
-  			<ul class="nav navbar-nav">
-  				<li><a href=""> Home </a></li>
-  				<li><a href="albums"> Friend </a></li>
-  				<li><a href="blog"> Messeger </a></li>	
-  				<li><a href="about"> About </a></li>
-  			</ul>
+  	<div class="container-fluid">
+  		<nav class="navbar navbar-inverse" id="topNavBar"></style>
+  			<div class="navbar-header">
+     			 <a class="navbar-brand" href="/home"><b>My Messenger</b></a>
+   			</div>
   			<nav class="nav navbar-nav navbar-right" style="margin-right: 5px;">
   				<li></li>
-  				<li><a href="login"> Login </a></li>
-  				<li><a href="users/new"> Sign Up </a></li>
+  				<li><a href="/messages"> Messages </a></li>	
+  				<li><a href="/friends"> Friends </a></li>
+  				<li><a href="/profile"> Profile </a></li>
+
+				
+				<% if logged_in? %>
+     				<li><%= link_to "Logout", logout_path, method: :delete %></li>
+     			<% else %>
+     				<li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+     				<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+     			<%end%>
   			</nav>
   			
   		</nav>
@@ -45,7 +51,8 @@
 			  <div class="col-sm-9">
 			  	<%= yield %>
 			  </div>
-			</div>
+	</div>
+
 		<section class="content" style="min-height: auto;">
 		    <% flash.each do |key, value| %>
 		        <div class="row">
@@ -55,6 +62,13 @@
 		        </div>
 		    <% end %>
 	    </section>
+
+	    <footer class="container-fluid" id="footer">
+  			<p>Lab2-1412439-1412529</p>
+		</footer>
+		
+
+
   </body>
 </html>
 
@@ -73,5 +87,13 @@
 		#hideBt {
 			display: none;
 		}
+	}
+	#footer{
+		background-color: #222222;
+		color: white;
+		text-align: center;
+		margin-top: 400px;
+		height: 90px;
+
 	}
 </style>

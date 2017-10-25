@@ -15,10 +15,10 @@
             class: "form-control" %>
         </div>
         <div class="text-center">
-          <%= f.submit "Login", class: "btn btn-info col-lg-12" %>
+          <%= f.submit "LOGIN", class: "btn btn-info col-lg-12" %>
         </div>
-        <div class="text-right">
-          <%= link_to "Register", new_user_path %>
+        <div style='padding-top:50px'>
+            <a <%= link_to "Create new account?", 'register' %> </a>
         </div>
       <% end %>
     </div>

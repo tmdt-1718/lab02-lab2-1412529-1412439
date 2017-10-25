@@ -1,0 +1,46 @@
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<h1>Messages</h1><br/>
+
+	<% @messages.each_with_index do |messages,index| %>
+
+
+
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+
+<!---Stattus = false-->
+    <% if !messages.status? %>
+
+      <div class="panel-heading">
+        <h4 class="panel-title" style="color: red">
+        	<a data-toggle="collapse" data-parent="#accordion" href=#<%= index %> > <%= messages.email %> </a>
+     	</h4>
+      </div>
+      	<div id=<%= index %> class="panel-collapse collapse">
+       	 <div class="panel-body"><%= messages.content %></div>
+     	 </div>
+
+     <% else %>
+     <div class="panel-heading">
+        <h4 class="panel-title">
+        	<a data-toggle="collapse" data-parent="#accordion" href=#<%= index %> > <%= messages.email %> </a>
+     	</h4>
+      </div>
+      	<div id=<%= index %> class="panel-collapse collapse">
+       	 <div class="panel-body"><%= messages.content %></div>
+     	 </div>
+
+    <%end%>
+	
+
+    </div>
+   </div>
+<% end %>
+
+
+
+
