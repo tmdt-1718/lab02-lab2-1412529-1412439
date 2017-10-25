@@ -50,6 +50,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  gem "pg",             "~> 0.18"
+  gem "rails_12factor", "0.0.2"
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -61,3 +66,4 @@ gem "mysql2", "~> 0.4.4"
 gem "bcrypt"
 gem "sprockets-rails", :require => "sprockets/railtie"
 gem "bootstrap-sass", "~> 3.3.6"
+gem 'rolify', :git => 'git://github.com/EppO/rolify.git'
